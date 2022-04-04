@@ -4,9 +4,9 @@
   "description": "Magic",
   "type": "module",
   "scripts": {
-    "start": "parcel src/index.html src/**/*.html",
-    "build": "parcel build --public-url /magic/ src/index.html src/**/*.html && cp -R public/* dist",
-    "clean": "rm -rf dist .parcel-cache"
+    "dev": "vite",
+    "build": "vite build --base=/magic/",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "parcel": "^2.4.1"
+    "@vitejs/plugin-react": "^1.3.0",
+    "vite": "^2.9.1"
   }
 }
