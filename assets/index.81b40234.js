@@ -1,4 +1,4 @@
-import"./modulepreload-polyfill.b7f2da20.js";const a=new Set;function i(){const e=Math.random().toString(36).substring(2);return a.has(e)?i():(a.add(e),`css-${e}`)}function l(e){const n=document.createElement("style");n.innerHTML=e,document.head.appendChild(n)}function d(e,...n){const t=i(),r=e.map((c,m)=>{var s;return c+((s=n[m])!=null?s:"")}).join("").replace(/&/g,`.${t}`);return l(r),t}var g="/magic/assets/mana.939f84be.png";const p=d`
+import"./modulepreload-polyfill.c7c6310f.js";const a=new Set;function o(){const e=Math.random().toString(36).substring(2);return a.has(e)?o():(a.add(e),`css-${e}`)}function l(e){const n=document.createElement("style");n.innerHTML=e,document.head.appendChild(n)}function d(e,...n){const t=o(),c=e.map((r,m)=>{var s;return r+((s=n[m])!=null?s:"")}).join("").replace(/&/g,`.${t}`);return l(c),t}const g="/magic/assets/mana.939f84be.png",p=d`
       & {
         display: flex;
         justify-content: center;
@@ -34,11 +34,11 @@ import"./modulepreload-polyfill.b7f2da20.js";const a=new Set;function i(){const 
         position: relative;
         bottom: 12.5%;
       }
-    `,h=`
+    `,u=`
         <div class="${p}" >
             <span class="icon">
                 <img src="${g}" alt="mana">
             </span>
             <span class="title">Magic</span>
         </div>
-    `,o=document.createElement("div");o.innerHTML=h;document.body.appendChild(o);
+    `,i=document.createElement("div");i.innerHTML=u;document.body.appendChild(i);
