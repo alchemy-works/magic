@@ -58,13 +58,13 @@
                     }
                 }
             }
-            console.log(dataList)
+const numberFormat =             new Intl.NumberFormat()
             document.querySelector('tbody').innerHTML = `
                 ${dataList.map((it) => `
                     <tr>
-                        <td>${it.year}</td>
+                        <td>第${it.year}年</td>
                         <td>${it.save}</td>
-                        <td>${it.sum.toFixed(2)}</td>
+                        <td>${numberFormat.format(it.sum.toFixed(2))}</td>
                     </tr>
                     `).join('')}
 
