@@ -11,6 +11,7 @@ export default defineConfig({
                 './src/figma/index.html',
                 './src/rAF/index.html',
                 './src/tagging/index.html',
+                './src/insurance/index.html',
             ],
         },
     },
