@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.4.0/github-markdown.min.css">
+    <style>
+        table {
+            margin-top: 1rem !important;
+        }
+    </style>
+    <title>Insurance</title>
+</head>
+
+<body>
+    <div class="markdown-body">
+        <input placeholder="年息">
+        <table>
+            <thead>
+                <tr>
+                    <th>年</th>
+                    <th>存钱</th>
+                    <th>本息</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+
+        function render(rate) {
+            const dataList = Array.from({ length: 100 })
+            for (let i = 0; i < dataList.length; i++) {
+                const data = dataList[i] || {}
+                if (i === 0) {
+                    dataList[i] = {
+                        year: i + 1,
+                        save: 60000,
+                        sum: 60000 * (1 + rate),
+                    }
+                } else if (i < 5) {
+                    dataList[i] = {
+                        year: i + 1,
+                        save: 60000,
+                        sum: (dataList[i - 1].sum + 60000) * (1 + rate),
+                    }
+                } else {
+                    dataList[i] = {
+                        year: i + 1,
+                        save: 0,
+                        sum: dataList[i - 1].sum * (1 + rate),
+                    }
+                }
+            }
+            console.log(dataList)
+            document.querySelector('tbody').innerHTML = `
+                ${dataList.map((it) => `
+                    <tr>
+                        <td>${it.year}</td>
+                        <td>${it.save}</td>
+                        <td>${it.sum.toFixed(2)}</td>
+                    </tr>
+                    `).join('')}
+
+            `
+        }
+        const inputRef = document.querySelector('input')
+        inputRef.value = 0.025
+        inputRef.addEventListener('input', (ev) => {
+            const rate = Number(ev.target.value)
+            if(rate) {
+                render(Number(rate))
+            }
+        })
+        document.querySelector('input').value = 0.025
+        render(0.025)
+
+    </script>
+</body>
+
+</html>
