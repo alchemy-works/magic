@@ -61,7 +61,7 @@
                     }
                 }
             }
-const numberFormat =             new Intl.NumberFormat()
+            const numberFormat = new Intl.NumberFormat()
             document.querySelector('tbody').innerHTML = `
                 ${dataList.map((it) => `
                     <tr>
@@ -77,7 +77,7 @@ const numberFormat =             new Intl.NumberFormat()
         inputRef.value = 0.025
         inputRef.addEventListener('input', (ev) => {
             const rate = Number(ev.target.value)
-            if(rate) {
+            if (rate) {
                 render(Number(rate))
             }
         })
